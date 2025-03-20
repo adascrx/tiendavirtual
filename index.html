@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variedades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Rosa pastel */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            height: 100vh;
+            font-size: 14px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .menu {
+            width: 200px;
+            background: #f8bbd0;
+            padding: 15px;
+            border-radius: 10px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            font-size: 13px;
+        }
+        .menu a {
+            display: block;
+            margin: 10px 0;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .image-container {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            font-size: 13px;
+            height: auto;
+            width: 60%;
+            margin-right: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .form-container, .cart {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            font-size: 13px;
+            height: auto;
+            width: 25%;
+            margin-left: 10px;
+        }
+
+        input, button {
+            padding: 8px;
+            font-size: 14px;
+            margin: 8px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #ff4081;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #e91e63;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .exchange-rate, .exchange-date {
+            font-size: 12px;
+            margin-top: 8px;
+            color: #555;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            align-items: center;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .exchange-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 180px;
+            font-size: 12px;
+            text-align: right;
+            height: auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .delete-button {
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 50%;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .delete-button:hover {
+            background-color: #e91e63;
+        }
+
+        /* Botones de contacto */
+        .contact-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .contact-buttons a {
+            text-decoration: none;
+        }
+
+        .contact-buttons button {
+            padding: 10px 20px;
+            background-color: #25D366; /* Color de WhatsApp */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .contact-buttons button.shein-button {
+            background-color: #ff4081; /* Rosa */
+        }
+
+        .contact-buttons button:hover {
+            background-color: #128C7E; /* WhatsApp Hover */
+        }
+
+        .contact-buttons button.shein-button:hover {
+            background-color: #e91e63; /* Rosa Hover */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header con título y logo -->
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Shein_logo.svg/1280px-Shein_logo.svg.png" alt="Logo" />
+        <h1>Variedades</h1>
+    </div>
+
+    <div class="container">
+        <!-- Contenedor de imágenes al lado izquierdo -->
+        <div class="image-container">
+            <h3>Proceso de compra</h3>
+
+            <img src="imagenes/1.jpeg" alt="Imagen 1">
+            <img src="imagenes/2.jpeg" alt="Imagen 2">
+            <img src="imagenes/3.jpeg" alt="Imagen 3">
+            <img src="imagenes/4.jpeg" alt="Imagen 4">
+            <img src="imagenes/5.jpeg" alt="Imagen 5">
+        </div>
+
+        <!-- Contenedor de Cotizador de Productos -->
+        <div class="form-container">
+            <h3>Cotizador de Productos</h3>
+            <form id="quoteForm">
+                <input type="text" id="sheinCode" placeholder="Código de Shein">
+                <input type="text" id="productLink" placeholder="Dirección Web del Producto">
+                <input type="number" step="0.01" id="productPrice" placeholder="Precio en dólares" required>
+                <button type="submit">Cotizar</button>
+            </form>
+            <div class="result" id="quoteResult"></div>
+            <div class="exchange-rate" id="exchangeRateUsed"></div>
+            <div class="exchange-date" id="exchangeDateUsed"></div>
+        </div>
+
+        <!-- Carrito de compras -->
+        <div class="cart">
+            <h3>Carrito de Compras</h3>
+            <div id="cartItems"></div>
+            <hr>
+            <div class="cart-total">
+                <p><strong>Total: ₡<span id="cartTotal">0.00</span></strong></p>
+            </div>
+            <button id="orderButton" style="display:none;" onclick="sendOrder()">Hacer Pedido</button>
+        </div>
+    </div>
+
+    <!-- Botones de contacto en la esquina superior derecha -->
+    <div class="contact-buttons">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/84016723" target="_blank">
+            <button>Contactar por WhatsApp</button>
+        </a>
+        <!-- Shein Button -->
+        <a href="https://www.shein.com" target="_blank">
+            <button class="shein-button">Ir a Shein</button>
+        </a>
+    </div>
+
+    <script>
+        let finalPriceInColones = 0;
+        let cart = [];
+        const exchangeRate = 508.15;
+
+        function getCurrentDate() {
+            const date = new Date();
+            return date.toLocaleDateString();
+        }
+
+        document.getElementById('productLink').addEventListener('input', function () {
+            const inputValue = this.value;
+            const match = inputValue.match(/https?:\/\/\S+/);
+            if (match) {
+                this.value = match[0];
+            }
+        });
+
+        document.getElementById('quoteForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let sheinCode = document.getElementById('sheinCode').value.trim();
+            const productLink = document.getElementById('productLink').value.trim();
+            const priceInDollars = parseFloat(document.getElementById('productPrice').value);
+
+            if (sheinCode && productLink) {
+                sheinCode = ''; // Borrar el código
+            }
+
+            if (!sheinCode && !productLink) {
+                alert("Debe ingresar al menos un Código de Shein o una Dirección Web del producto.");
+                return;
+            }
+
+            if (isNaN(priceInDollars) || priceInDollars <= 0) {
+                alert("Por favor, ingrese un precio válido.");
+                return;
+            }
+
+            const priceWithAdditional = priceInDollars + 0.5;
+            let calculatedPrice = priceWithAdditional * exchangeRate;
+
+            if (calculatedPrice < 1000) {
+                finalPriceInColones = calculatedPrice * 2;
+            } else if (calculatedPrice >= 1000 && calculatedPrice <= 3000) {
+                finalPriceInColones = calculatedPrice * 1.75;
+            } else {
+                finalPriceInColones = calculatedPrice * 1.5;
+            }
+
+            const item = {
+                reference: sheinCode || productLink,
+                price: finalPriceInColones.toFixed(2),
+                isCode: !!sheinCode
+            };
+
+            cart.push(item);
+            updateCart();
+
+            document.getElementById('quoteResult').innerHTML = `Precio ya en CR: ₡${finalPriceInColones.toFixed(2)}`;
+            document.getElementById('exchangeRateUsed').innerHTML = `Tipo de cambio utilizado: ₡${exchangeRate.toFixed(2)} por USD`;
+            document.getElementById('exchangeDateUsed').innerHTML = `Fecha del tipo de cambio: ${getCurrentDate()}`;
+        
+ 	document.getElementById('sheinCode').value = '';
+    	document.getElementById('productLink').value = '';
+    	document.getElementById('productPrice').value = '';
+
+});
+
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            cartItemsDiv.innerHTML = '';
+            let counter = 1;
+            cart.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.classList.add('cart-item');
+
+                div.innerHTML = `
+                    <button class="delete-button" onclick="removeItem(${index})">X</button>
+                    <span style="cursor: pointer;" onclick="openLink('${item.reference}', ${item.isCode})">
+                        ${item.isCode ? item.reference : `Artículo #${counter}`}
+                    </span>
+                    <span style="text-align: right;">₡${item.price}</span>
+                `;
+                cartItemsDiv.appendChild(div);
+                counter++;
+            });
+
+            let total = 0;
+            cart.forEach(item => {
+                total += parseFloat(item.price);
+            });
+
+            document.getElementById('cartTotal').innerText = total.toFixed(2);
+
+            document.getElementById('orderButton').style.display = cart.length > 0 ? 'inline-block' : 'none';
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function openLink(link, isCode) {
+            if (isCode) {
+                window.open(`https://www.shein.com/${link}`, '_blank');
+            } else {
+                window.open(link, '_blank');
+            }
+        }
+
+        function sendOrder() {
+            let orderMessage = "Hola, me gustaría hacer un pedido con los siguientes productos:\n\n";
+            cart.forEach((item, index) => {
+                if (item.isCode) {
+                    orderMessage += `${index + 1}. Código de Shein: ${item.reference}: ₡${item.price}\n`;
+                } else {
+                    orderMessage += `${index + 1}. Artículo: ${item.reference} - Link: ${item.reference} : ₡${item.price}\n`;
+                }
+            });
+
+            const totalPrice = cart.reduce((sum, item) => sum + parseFloat(item.price), 0);
+            orderMessage += `\nTotal: ₡${totalPrice.toFixed(2)}\n`;
+
+            const whatsappNumber = "84016723"; // Reemplazar con tu número de WhatsApp
+            const encodedMessage = encodeURIComponent(orderMessage);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, "_blank");
+        }
+    </script>
+</body>
+</html>
