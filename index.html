@@ -258,11 +258,11 @@
     <!-- Botones de contacto en la esquina superior derecha -->
     <div class="contact-buttons">
         <!-- WhatsApp Button -->
-        <a href="https://wa.me/84016723" target="_blank">
+        <a href="https://wa.me/88348297" target="_blank">
             <button>Contactar por WhatsApp</button>
         </a>
         <!-- Shein Button -->
-        <a href="https://www.shein.com" target="_blank">
+        <a href="https://us.shein.com/" target="_blank">
             <button class="shein-button">Ir a Shein</button>
         </a>
     </div>
@@ -372,7 +372,7 @@
 
         function openLink(link, isCode) {
             if (isCode) {
-                window.open(`https://www.shein.com/${link}`, '_blank');
+                window.open(`https://us.shein.com/${link}`, '_blank');
             } else {
                 window.open(link, '_blank');
             }
@@ -391,7 +391,7 @@
             const totalPrice = cart.reduce((sum, item) => sum + parseFloat(item.price), 0);
             orderMessage += `\nTotal: ₡${totalPrice.toFixed(2)}\n`;
 
-            const whatsappNumber = "50684016723"; // Reemplazar con tu número de WhatsApp
+            const whatsappNumber = "50688348297"; // Reemplazar con tu número de WhatsApp
             const encodedMessage = encodeURIComponent(orderMessage);
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             
