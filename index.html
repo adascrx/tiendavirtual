@@ -382,14 +382,14 @@
             let orderMessage = "Hola, me gustaría hacer un pedido con los siguientes productos:\n\n";
             cart.forEach((item, index) => {
                 if (item.isCode) {
-                    orderMessage += `${index + 1}. Código de Shein: ${item.reference}: ₡${item.price}\n`;
+                    orderMessage += `${index + 1}. Código de Shein: ${item.reference}: ₡${item.price}\n\n`;
                 } else {
-                    orderMessage += `${index + 1}. Artículo: ${item.reference} - Link: ${item.reference} : ₡${item.price}\n`;
+                    orderMessage += `${index + 1}. Artículo: ${item.reference} - Link: ${item.reference} : ₡${item.price}\n\n`;
                 }
             });
 
             const totalPrice = cart.reduce((sum, item) => sum + parseFloat(item.price), 0);
-            orderMessage += `\nTotal: ₡${totalPrice.toFixed(2)}\n`;
+            orderMessage += `\nTotal: ₡${totalPrice.toFixed(2)}\n\n`;
 
             const whatsappNumber = "50688348297"; // Reemplazar con tu número de WhatsApp
             const encodedMessage = encodeURIComponent(orderMessage);
